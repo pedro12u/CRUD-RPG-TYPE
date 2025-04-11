@@ -1,22 +1,38 @@
 {
   "name": "rpgcrud",
   "version": "1.0.0",
-  "description": "",
+  "description": "Desenvolvimento do CRUD para a disciplina de Escola de TI, seguindo a problemática descrita pelo professor.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "prisma": "prisma"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@prisma/client": "^6.6.0",
     "@types/express": "^5.0.1",
+    "@types/node": "^22.14.0",
     "prisma": "^6.6.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedro12u/CRUD-RPG-TYPE.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pedro12u/CRUD-RPG-TYPE/issues"
+  },
+  "homepage": "https://github.com/pedro12u/CRUD-RPG-TYPE#readme"
 }

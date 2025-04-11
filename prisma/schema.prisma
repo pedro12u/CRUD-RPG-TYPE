@@ -1,12 +1,29 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
 }
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url      = "file:./dev.db"
+}
+
+model Personagem {
+  id              String       @id @default(uuid())
+  nome            String
+  nomeAventureiro String
+  classe          String
+  level           Int
+  forcaBase       Int
+  defesaBase      Int
+  itens           ItemMagico[]
+}
+
+model ItemMagico {
+  id           String   @id @default(uuid())
+  nome         String
+  tipo         String   // "Arma", "Armadura", "Amuleto"
+  forca        Int
+  defesa       Int
+  personagem   Personagem? @relation(fields: [personagemId], references: [id])
+  personagemId String?
 }
